@@ -79,6 +79,18 @@ img {
     margin: 60px 40px 30px 40px
 }
 
+.block--hidden {
+  display: none;
+}
+
+.block--hidden-visible .block--hidden {
+  display: flex;
+  background: url(../img/tours.png) 0 0 / cover no-repeat;
+  height: 900px;
+  margin: 60px 40px 30px 40px
+}
+
+
 .block__gradient {
     margin-top: 480px;
     background: linear-gradient(
