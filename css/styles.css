@@ -1,2 +1,121 @@
 ﻿body {
 }
+
+body {
+}
+
+
+/* Указываем box sizing */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Убираем внутренние отступы */
+ul[class],
+ol[class] {
+  padding: 0;
+}
+
+/* Убираем внешние отступы */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+ul[class],
+ol[class],
+li,
+figure,
+figcaption,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Выставляем основные настройки по-умолчанию для body */
+body {
+  min-height: 100vh;
+  scroll-behavior: smooth;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* Удаляем стандартную стилизацию для всех ul и il, у которых есть атрибут class*/
+ul[class],
+ol[class] {
+  list-style: none;
+}
+
+/* Элементы a, у которых нет класса, сбрасываем до дефолтных стилей */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Упрощаем работу с изображениями */
+img {
+  max-width: 100%;
+  display: block;
+}
+
+.contacts {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.contacts__title{
+    font-family: Amatic SC;
+    font-weight: normal;
+    color: black;
+    margin: 50px 0 50px 0;
+    font-size: 120px;
+}
+
+
+.contacts__list{
+  font-family: "Roboto";
+  font-size: 25px;
+}
+
+.contacts__text{
+  padding: 0 0 0px 100px;
+}
+
+.contacts__icon1{
+  background: url(../img/place.png) left no-repeat;
+  background-size: 28px 40px;
+  margin: 0 0 20px 0;
+}
+
+.contacts__icon2{
+  background: url(../img/phone.png) left no-repeat;
+  background-size: 30px 40px;
+}
+
+.contacts__icon3{
+  background: url(../img/email.png) left no-repeat;
+  background-size: 30px 40px;
+  margin: 20px 0 0 0;
+}
+
+.contacts__map{
+  width: 980px;
+  margin: 100px 0 250px 0;
+}
+
+.footer{
+  background-color: black;
+  height: 200px;
+  display: flex;
+  align-items: center;
+}
+.footer__text{
+  color: white;
+  font-family: "Roboto";
+  font-size: 35px;
+  margin: 0 40px 0 40px;
+}
