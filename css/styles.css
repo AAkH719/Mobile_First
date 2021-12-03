@@ -1,2 +1,500 @@
-﻿body {
+﻿/* Указываем box sizing */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/* Убираем внутренние отступы */
+ul[class],
+ol[class] {
+    padding: 0;
+}
+
+/* Убираем внешние отступы */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+ul[class],
+ol[class],
+li,
+figure,
+figcaption,
+blockquote,
+dl,
+dd {
+  font-weight: normal;
+  margin: 0;
+}
+
+/* Выставляем основные настройки по-умолчанию для body */
+body {
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  scroll-behavior: smooth;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+  font-weight: normal;
+}
+
+.container {
+  padding: 0 17px;
+}
+
+.attractions {
+}
+
+.item {
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 50px;
+  position: center;
+}
+
+.image__attrac {
+  width: 900px;
+  border-radius: 50px;
+  display: block;
+  margin: auto;
+}
+
+.title {
+  padding-top: 88px;
+  text-align: center;
+  font-family: Amatic SC;
+  font-style: normal;
+  color: black;
+  margin: 50px 0 50px 0;
+  font-size: 60px;
+}
+
+.subtitle {
+  width: 850px;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 45px;
+  text-decoration-line: underline;
+  color: #585858;
+  margin-top: 30px;
+}
+
+.text {
+  width: 850px;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 16px;
+  margin-top: 36px;
+}
+
+/* Удаляем стандартную стилизацию для всех ul и il, у которых есть атрибут class*/
+ul[class],
+ol[class] {
+    list-style: none;
+}
+
+/* Элементы a, у которых нет класса, сбрасываем до дефолтных стилей */
+a:not([class]) {
+    text-decoration-skip-ink: auto;
+}
+
+/* Упрощаем работу с изображениями */
+img {
+    max-width: 100%;
+    display: block;
+}
+
+.welcome {
+    background: url(../img/bg.png) 0 0 / cover no-repeat;
+    min-height: 140vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header {
+    position: fixed;
+    display: flex;
+    justify-content: space-between;
+    width: 980px;
+}
+
+.header__logo {
+    width: 100px;
+    height: 100px;
+    margin: 50px 0 0 50px;
+    z-index: 5;
+    background: url(../img/welcome_logo.png) 0 0/ 100% 100% no-repeat;
+}
+
+.header__button {
+    z-index: 5;
+    position: relative;
+    height: 70px;
+    width: 70px;
+    margin: 70px 50px 0 0;
+    border: 1px solid rgba(255, 255, 255, 0);
+    text-align: center;
+    outline: none;
+    text-decoration: none;
+    background-color: transparent;
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+}
+
+.header._active {
+    z-index: 12;
+    background-color: rgba(0, 0, 0, 0.9);
+    height: 180px;
+}
+
+.header__button span,
+.header__button::before,
+.header__button::after {
+    left: 0;
+    position: absolute;
+    height: 10%;
+    width: 90%;
+    transition: all 0.3s ease 0s;
+    background-color: white;
+    z-index: 5;
+}
+
+.header__button::before,
+.header__button::after {
+    content: "";
+}
+
+.header__button::before {
+    top: 0;
+    margin-top: 12%;
+}
+
+.header__button::after {
+    bottom: 0;
+    margin-bottom: 12%;
+}
+
+.header__button span {
+    top: 50%;
+    transform: scale(1) translate(0px, -50%);
+}
+
+.header__button._active {
+    background: none;
+    transform: translate(0px, 90vh);
+}
+
+    .header__button._active span {
+        transform: scale(0) translate(0px, -50%);
+    }
+
+    .header__button._active::before {
+        top: 38%;
+        left: 0%;
+        transform: rotate(-45deg) translate(0px, -50%);
+    }
+
+    .header__button._active::after {
+        bottom: 38%;
+        transform: rotate(45deg) translate(0px, 50%);
+        left: 0%;
+    }
+
+.welcome__text {
+    margin: 60vh 0 0 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.welcome__title {
+    font-family: Amatic SC;
+    font-weight: normal;
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 200px;
+}
+
+.welcome__subtitle {
+    width: 660px;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 100;
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 30px;
+    margin: -30px 0 0 0;
+}
+
+.welcome__arrow {
+    height: 50px;
+    width: 100px;
+    background: url(/img/welcome_arrow.png) 0 0 / cover no-repeat;
+    margin: 0 0 100px 0;
+    animation: arrowDown 1s infinite;
+}
+
+    .welcome__arrow._active {
+        visibility: hidden;
+    }
+
+@keyframes arrowDown {
+    0% {
+        transform: translate3d(0, 0, 0);
+    }
+
+    80% {
+        transform: translate3d(0, 40px, 0);
+    }
+
+    100% {
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+.menu {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    top: -100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    transition: top 0.3s ease 0s;
+    z-index: 4;
+}
+
+.menu._active {
+    top: 0%;
+}
+
+.menu__list > li {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    font-size: 40px;
+    margin-top: 20px;
+}
+
+.menu__link {
+    font-family: Roboto;
+    color: rgba(255, 255, 255, 0.7);
+    text-decoration: none;
+}
+
+.section {
+    height: 100vh;
+    font-size: 70px;
+}
+
+
+/* Указываем box sizing */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Убираем внутренние отступы */
+ul[class],
+ol[class] {
+  padding: 0;
+}
+
+/* Убираем внешние отступы */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+ul[class],
+ol[class],
+li,
+figure,
+figcaption,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Выставляем основные настройки по-умолчанию для body */
+body {
+  min-height: 100vh;
+  scroll-behavior: smooth;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* Удаляем стандартную стилизацию для всех ul и il, у которых есть атрибут class*/
+ul[class],
+ol[class] {
+  list-style: none;
+}
+
+/* Элементы a, у которых нет класса, сбрасываем до дефолтных стилей */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Упрощаем работу с изображениями */
+img {
+  max-width: 100%;
+  display: block;
+}
+
+.tours, .contacts  {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.tours__title{
+    font-family: Amatic SC;
+    font-weight: normal;
+    color: black;
+    margin-top: 50px;
+    font-size: 90px;
+}
+
+.block {
+    display: flex;
+    background: url(../img/tours.png) 0 0 / cover no-repeat;
+    height: 900px;
+    margin: 60px 40px 30px 40px
+}
+
+.block--hidden {
+  display: none;
+}
+
+.block--hidden-visible .block--hidden {
+  display: flex;
+  background: url(../img/tours.png) 0 0 / cover no-repeat;
+  height: 900px;
+  margin: 60px 40px 30px 40px
+}
+
+
+.block__gradient {
+    margin-top: 480px;
+    background: linear-gradient(
+        180deg,
+        rgba(196, 196, 196, 0) 0%,
+        rgba(255, 255, 255, 0.67) 25%,
+        #eeeeee 80%
+    );
+}
+
+.block__title {
+    font-family: "Roboto";
+    color: black;
+    margin: 0 0 20px 50px;
+    font-weight: 400;
+    font-size: 50px;
+}
+
+.block__description {
+    font-family: "Roboto";
+    color: black;
+    margin: 0 0 30px 50px;
+    font-size: 40px;
+    font-weight: 100;
+}
+
+.block__price-button {
+    display: flex;
+    width: 85%;
+    justify-content: space-between;
+    align-items:center;
+    margin: 0 7.5% 0 7.5%;
+}
+
+.block__price{
+    font-family: "Roboto";
+    font-size: 65px;
+    font-weight: 100;
+}
+
+.block__button{
+    width: 250px;
+    height: 120px;
+    border: 2px solid #c3b182;
+    background: transparent;
+    font-family: "Roboto";
+    font-size: 30px;
+    font-weight: bold;
+    color: #c3b182;
+}
+
+.more-block{
+    font-family: "Roboto";
+    color: #9f9f9f;
+    font-size: 30px;
+    margin: 50px 0 50px 0 ;
+    background: transparent;
+    border: none;
+}
+
+.contacts__title{
+    font-family: Amatic SC;
+    font-weight: normal;
+    color: black;
+    margin: 50px 0 50px 0;
+    font-size: 120px;
+}
+
+
+.contacts__list{
+  font-family: "Roboto";
+  font-size: 25px;
+}
+
+.contacts__text{
+  padding: 0 0 0px 100px;
+}
+
+.contacts__icon1{
+  background: url(../img/place.png) left no-repeat;
+  background-size: 28px 40px;
+  margin: 0 0 20px 0;
+}
+
+.contacts__icon2{
+  background: url(../img/phone.png) left no-repeat;
+  background-size: 30px 40px;
+}
+
+.contacts__icon3{
+  background: url(../img/email.png) left no-repeat;
+  background-size: 30px 40px;
+  margin: 20px 0 0 0;
+}
+
+.contacts__map{
+  width: 980px;
+  margin: 100px 0 250px 0;
+}
+
+.footer{
+  background-color: black;
+  height: 200px;
+  display: flex;
+  align-items: center;
+}
+.footer__text{
+  color: white;
+  font-family: "Roboto";
+  font-size: 35px;
+  margin: 0 40px 0 40px;
 }
