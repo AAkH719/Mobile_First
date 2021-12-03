@@ -293,3 +293,153 @@ img {
     height: 100vh;
     font-size: 70px;
 }
+
+
+/* Указываем box sizing */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Убираем внутренние отступы */
+ul[class],
+ol[class] {
+  padding: 0;
+}
+
+/* Убираем внешние отступы */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+ul[class],
+ol[class],
+li,
+figure,
+figcaption,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Выставляем основные настройки по-умолчанию для body */
+body {
+  min-height: 100vh;
+  scroll-behavior: smooth;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* Удаляем стандартную стилизацию для всех ul и il, у которых есть атрибут class*/
+ul[class],
+ol[class] {
+  list-style: none;
+}
+
+/* Элементы a, у которых нет класса, сбрасываем до дефолтных стилей */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Упрощаем работу с изображениями */
+img {
+  max-width: 100%;
+  display: block;
+}
+
+.tours {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.tours__title{
+    font-family: Amatic SC;
+    font-weight: normal;
+    color: black;
+    margin-top: 50px;
+    font-size: 90px;
+}
+
+.block {
+    display: flex;
+    background: url(../img/tours.png) 0 0 / cover no-repeat;
+    height: 900px;
+    margin: 60px 40px 30px 40px
+}
+
+.block--hidden {
+  display: none;
+}
+
+.block--hidden-visible .block--hidden {
+  display: flex;
+  background: url(../img/tours.png) 0 0 / cover no-repeat;
+  height: 900px;
+  margin: 60px 40px 30px 40px
+}
+
+
+.block__gradient {
+    margin-top: 480px;
+    background: linear-gradient(
+        180deg,
+        rgba(196, 196, 196, 0) 0%,
+        rgba(255, 255, 255, 0.67) 25%,
+        #eeeeee 80%
+    );
+}
+
+.block__title {
+    font-family: "Roboto";
+    color: black;
+    margin: 0 0 20px 50px;
+    font-weight: 400;
+    font-size: 50px;
+}
+
+.block__description {
+    font-family: "Roboto";
+    color: black;
+    margin: 0 0 30px 50px;
+    font-size: 40px;
+    font-weight: 100;
+}
+
+.block__price-button {
+    display: flex;
+    width: 85%;
+    justify-content: space-between;
+    align-items:center;
+    margin: 0 7.5% 0 7.5%;
+}
+
+.block__price{
+    font-family: "Roboto";
+    font-size: 65px;
+    font-weight: 100;
+}
+
+.block__button{
+    width: 250px;
+    height: 120px;
+    border: 2px solid #c3b182;
+    background: transparent;
+    font-family: "Roboto";
+    font-size: 30px;
+    font-weight: bold;
+    color: #c3b182;
+}
+
+.more-block{
+    font-family: "Roboto";
+    color: #9f9f9f;
+    font-size: 30px;
+    margin: 50px 0 50px 0 ;
+    background: transparent;
+    border: none;
+}

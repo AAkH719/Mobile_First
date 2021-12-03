@@ -3,6 +3,9 @@ let menuBody;
 let title_list1;
 let arrow;
 let menuLinks;
+let buttonToggleItems;
+let listItemsContainer;
+
 
 function init() {
     buttonMenu = document.querySelector('.header__button');
@@ -24,6 +27,19 @@ function init() {
             menuLink.addEventListener("click", onMenuLinkClick);
         });
     }
+    buttonToggleItems = document.getElementsByClassName('more-block')
+    if(buttonToggleItems.length === 0) {
+      throw new Error('Кнопка не найдена в document');
+    }
+    
+    listItemsContainer = document.getElementsByClassName('tours')
+    
+    buttonToggleItems[0].addEventListener(
+      'click',
+      (event) =>
+        handleToggleItemsButtonClick(listItemsContainer[0], event)
+    )
+
 }
 
 window.addEventListener("DOMContentLoaded", init);
@@ -72,3 +88,15 @@ function handleWindowScroll() {
         }
     };
 }
+function handleToggleItemsButtonClick(listItemsContainer, pointerEvent) {
+    const classForVisibleHiddenItems = 'block--hidden-visible';
+    
+    if(pointerEvent.currentTarget.innerText === 'Больше туров') {
+      pointerEvent.currentTarget.innerText = 'Меньше туров'
+      listItemsContainer.classList.add(classForVisibleHiddenItems)
+    } else {
+        pointerEvent.currentTarget.innerText = 'Больше туров'
+        listItemsContainer.classList.remove(classForVisibleHiddenItems)
+    }
+  }
+
