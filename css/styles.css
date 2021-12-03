@@ -26,7 +26,8 @@ figcaption,
 blockquote,
 dl,
 dd {
-    margin: 0;
+  font-weight: normal;
+  margin: 0;
 }
 
 /* Выставляем основные настройки по-умолчанию для body */
@@ -38,6 +39,7 @@ body {
   scroll-behavior: smooth;
   text-rendering: optimizeSpeed;
   line-height: 1.5;
+  font-weight: normal;
 }
 
 .container {
@@ -45,47 +47,46 @@ body {
 }
 
 .attractions {
-  background-color: #E5E5E5;
-}
-
-.title {
-  padding-top: 88px;
-  text-align: center;
 }
 
 .item {
+  display:flex;
+  flex-direction: column;
+  align-items: center;
   padding-top: 50px;
   position: center;
 }
 
 .image__attrac {
-  width: 380px;
-  border-radius: 15px;
+  width: 900px;
+  border-radius: 50px;
   display: block;
   margin: auto;
 }
 
 .title {
+  padding-top: 88px;
+  text-align: center;
   font-family: Amatic SC;
   font-style: normal;
-  font-weight: normal;
-  font-size: 20px;
-  line-height: 45px;
-  color: #000000;
+  color: black;
+  margin: 50px 0 50px 0;
+  font-size: 60px;
 }
 
 .subtitle {
+  width: 850px;
   font-family: Roboto;
   font-style: normal;
   font-weight: 500;
-  font-size: 24px;
-  line-height: 28px;
+  font-size: 45px;
   text-decoration-line: underline;
   color: #585858;
   margin-top: 30px;
 }
 
 .text {
+  width: 850px;
   font-family: Roboto;
   font-style: normal;
   font-weight: normal;
@@ -112,7 +113,7 @@ img {
 }
 
 .welcome {
-    background: url(/img/bg1.jpg) 0 0 / cover no-repeat;
+    background: url(/img/bg.png) 0 0 / cover no-repeat;
     height: 100vh;
     display: flex;
     flex-direction: column;
