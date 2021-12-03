@@ -1,2 +1,71 @@
-﻿body {
+html {
+  box-sizing: border-box;
+}
+
+*, *::after, *::before {
+  box-sizing: inherit;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+}
+
+body {
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  padding: 0 17px;
+}
+
+.attractions {
+  background-color: #E5E5E5;
+}
+
+.title {
+  padding-top: 88px;
+  text-align: center;
+}
+
+.item {
+  padding-top: 50px;
+  position: center;
+}
+
+.image__attrac {
+  width: 380px;
+  border-radius: 15px;
+  display: block;
+  margin: auto;
+}
+
+.title {
+  font-family: Amatic SC;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 20px;
+  line-height: 45px;
+  color: #000000;
+}
+
+.subtitle {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 28px;
+  text-decoration-line: underline;
+  color: #585858;
+  margin-top: 30px;
+}
+
+.text {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 16px;
+  margin-top: 36px;
 }
