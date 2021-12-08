@@ -27,7 +27,7 @@ function init() {
             menuLink.addEventListener("click", onMenuLinkClick);
         });
     }
-    buttonToggleItems = document.getElementsByClassName('more-block')
+    buttonToggleItems = document.getElementsByClassName('more-tour')
     if(buttonToggleItems.length === 0) {
       throw new Error('Кнопка не найдена в document');
     }
@@ -52,24 +52,26 @@ function onMenuClick(e) {
 }
 
 function onMenuLinkClick(e) {
+    e.preventDefault();
     const menuLink = e.target;
-    if (menuLink.dataset.goto && document.querySelector(menuLink.dataset.goto)) {
-        const gotoBlock = document.querySelector(menuLink.dataset.goto);
-        const gotoBlockValue = gotoBlock.getBoundingClientRect().top + window.pageYOffset - 200;
-
-        if (buttonMenu.classList.contains('_active')) {
-            document.body.classList.remove('_lock');
-            buttonMenu.classList.remove('_active');
-            menuBody.classList.remove('_active');
-            arrow.classList.remove('_active');
-        }
-
-        window.scrollTo({
-            top: gotoBlockValue,
-            behavior: "smooth"
-        });
-        e.preventDefault();
+    if (!menuLink.dataset.goto || !document.querySelector(menuLink.dataset.goto)) {
+        return;
     }
+
+    const gotoBlock = document.querySelector(menuLink.dataset.goto);
+    const gotoBlockValue = gotoBlock.getBoundingClientRect().top + window.pageYOffset - 200;
+
+    if (buttonMenu.classList.contains('_active')) {
+        document.body.classList.remove('_lock');
+        buttonMenu.classList.remove('_active');
+        menuBody.classList.remove('_active');
+        arrow.classList.remove('_active');
+    }
+
+    window.scrollTo({
+        top: gotoBlockValue,
+        behavior: "smooth"
+    });
 }
 
 function handleButtonClick() {
@@ -78,18 +80,19 @@ function handleButtonClick() {
 
 function handleWindowScroll() {
     const header = document.querySelector('.header');
-    if (header) {
-        let scrolled = window.pageYOffset;
-        if (scrolled >= 10) {
-            header.classList.add('_active');
-        }
-        if (scrolled < 10) {
-            header.classList.remove('_active');
-        }
-    };
+    if (!header) {
+        return;  
+    }
+    let scrolled = window.pageYOffset;
+    if (scrolled >= 10) {
+        header.classList.add('_active');
+    }
+    if (scrolled < 10) {
+        header.classList.remove('_active');
+    }
 }
 function handleToggleItemsButtonClick(listItemsContainer, pointerEvent) {
-    const classForVisibleHiddenItems = 'block--hidden-visible';
+    const classForVisibleHiddenItems = 'tour--hidden-visible';
     
     if(pointerEvent.currentTarget.innerText === 'Больше туров') {
       pointerEvent.currentTarget.innerText = 'Меньше туров'
