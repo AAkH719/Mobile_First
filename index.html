@@ -3,9 +3,127 @@
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="utf-8" />
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Amatic+SC&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet">
+    <script src="js/app.js"></script>
     <title></title>
 </head>
 <body>
-
+    <article id="title_list0" class="welcome">
+        <header class="header">
+            <a class="header__logo"></a>
+            <nav class="menu">
+                <ul class="menu__list">
+                    <li><a data-goto="#title_list0" href="#" class="menu__link">Главная</a></li>
+                    <li><a data-goto="#title_list1" href="#" class="menu__link">Достопримечательности</a></li>
+                    <li><a data-goto="#title_list2" href="#" class="menu__link">Туры</a></li>
+                    <li><a data-goto="#title_list3" href="#" class="menu__link">Контакты</a></li>
+                </ul>
+            </nav>
+            <button class="header__button"><span></span></button>
+        </header>
+        <div class="welcome__text">
+            <h1 class="welcome__title">ХАКАСИЯ</h1>
+            <h5 class="welcome__subtitle">Туристическое Агенство Республики Хакасия</h5>
+        </div>
+        <div class="welcome__arrow"></div>
+    </article>
+    <article id="title_list1" class="attractions">
+        <div class="container">
+            <h2 class="attractions__title">Достопримечательности</h2>
+            <section class="item">
+                <figure class="image">
+                    <img class="image__attrac" src="img/image-attract.png" alt="image__attrac" />
+                </figure>
+                <header class="subtitle"><h3>Тропа предков</h3></header>
+                <p class="text"> Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iusto exercitationem commodi ipsa adipisci facilis cum placeat velit. Earum consectetur cum maxime. Molestias quos dicta illum eos. Eius odio fugit ducimus hic est quae debitis voluptatum, cumque recusandae repellat aut vero.</p>
+            </section>
+            <section class="item">
+                <figure class="image">
+                    <img class="image__attrac" src="img/image-attract.png" alt="image__attrac" />
+                </figure>
+                <header class="subtitle"><h3>Приисковый</h3></header>
+                <p class="text"> Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iste, pariatur facilis? Aspernatur repellendus eos alias natus ab nisi quisquam, magnam qui reiciendis sit laboriosam? Vero quos, amet temporibus ipsa expedita sapiente, molestiae dolorem perferendis a tempora, pariatur fuga. Voluptates, totam!</p>
+            </section>
+            <section class="item">
+                <figure class="image">
+                    <img class="image__attrac" src="img/image-attract.png" alt="image__attrac" />
+                </figure>
+                <header class="subtitle"><h3>Сундуки</h3></header>
+                <p class="text">Lorem ipsum dolor sit amet consectetur adipisicing elit. A totam nobis modi quisquam optio quo possimus amet itaque minus incidunt, omnis, ea non saepe deserunt. Atque autem, nam iure magnam vero tempore quos perspiciatis similique, doloremque dicta qui, rerum impedit?</p>
+            </section> 
+        </div>
+    </article>
+    <article id="title_list2" class="tours">
+        <h2 class="tours__title">Туры</h2>
+        <section class="tour">
+            <h3 class="tour__title">Название</h3>
+            <p class="tour__description">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Earum, perspiciatis.</p>
+            <div class="tour__price-button">
+                <p class="tour__price"> от <b>10 000</b> р.</p>
+                <button class="tour__button">Купить</button>
+            </div>
+        </section>
+        <section class="tour">
+            <h3 class="tour__title">Название</h3>
+            <p class="tour__description">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Earum, perspiciatis.</p>
+            <div class="tour__price-button">
+                <p class="tour__price"> от <b>10 000</b> р.</p>
+                <button class="tour__button">Купить</button>
+            </div>
+        </section>
+        <section class="tour tour--hidden">
+            <h3 class="tour__title">Название</h3>
+            <p class="tour__description">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Earum, perspiciatis.</p>
+            <div class="tour__price-button">
+                <p class="tour__price"> от <b>10 000</b> р.</p>
+                <button class="tour__button">Купить</button>
+            </div>
+        </section>
+        <section class="tour tour--hidden">
+            <h3 class="tour__title">Название</h3>
+            <p class="tour__description">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Earum, perspiciatis.</p>
+            <div class="tour__price-button">
+                <p class="tour__price"> от <b>10 000</b> р.</p>
+                <button class="tour__button">Купить</button>
+            </div>
+        </section>
+        <section class="tour tour--hidden">
+            <h3 class="tour__title">Название</h3>
+            <p class="tour__description">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Earum, perspiciatis.</p>
+            <div class="tour__price-button">
+                <p class="tour__price"> от <b>10 000</b> р.</p>
+                <button class="tour__button">Купить</button>
+            </div>
+        </section>   
+        <section class="tour tour--hidden">
+            <h3 class="tour__title">Название</h3>
+            <p class="tour__description">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Earum, perspiciatis.</p>
+            <div class="tour__price-button">
+                <p class="tour__price"> от <b>10 000</b> р.</p>
+                <button class="tour__button">Купить</button>
+            </div>
+        </section>
+        <button class="more-tour">Больше туров</button>
+    </article>
+    <article id="title_list3" class="contacts">
+        <h2 class="contacts__title">Контакты</h2>
+        <ul class="contacts__list">
+            <li class="contacts__text contacts__icon1">655019, Республика Хакасия, г. Абакан, пр. Ленина, д. 67</li>
+            <li class="contacts__text contacts__icon2">8 (3902) 22-53-35</li>
+            <li class="contacts__text">8 (3902) 24-30-71</li>
+            <li class="contacts__text contacts__icon3">kancler@vskhakasia.ru</li>
+        </ul>
+        <img src="img/contacts-map.png" alt="Карта" class="contacts__map">
+    </article>
+    <footer class="footer">
+        <p class="footer__text">Офицальный сайт Агренства Туризма Республики Хакасия © 2021</p>
+    </footer>
 </body>
 </html>
