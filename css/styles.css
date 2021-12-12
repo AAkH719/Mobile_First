@@ -517,6 +517,17 @@ img {
   margin: 0 40px 0 40px;
 }
 
+@media (max-width:1280px) {
+    .footer-contacts {
+        display: none;
+    }
+
+    .footer-menu {
+        display: none;
+    }
+}
+
+
 @media (min-width:1280px) {
     .welcome{
         background: url(../img/bg_desktop.png) 0 0 / cover no-repeat;
